@@ -1,0 +1,53 @@
+<div class="controle-fluido controle-md px-0 mx-0 px-md-1 mx-md-auto mt-md-5 ">
+
+    <div class="linha mt-3 mt-sm-5" *ngIf="msgAguarde">
+        <div class="coluna-12">
+            <p class="msg-espera">Aguarde...</p>
+        </div>        
+    </div>
+
+    <div class="linha mb-0 mb-md-5" *ngIf="!msgAguarde">
+        <div class="coluna-2">
+            <a class="btn-flutuante" routerLink="/personagens">
+                <img src="../../assets/img/arrow_back_black_24dp.svg" alt="Ir para a busca de personagens" />
+            </a>
+        </div>
+    </div>
+    <div class="linha" *ngIf="!msgAguarde">
+        <div class="coluna-12 coluna-lg-6 coluna-xxl-4 px-0 px-md-3 px-lg-3 box-detalhes-img ">
+            <img  src="{{personagem.img}}" alt="{{personagem.nome}}" />
+            <div class="my-4 mx-4 mx-md-auto titulo-3 txt-left">
+                <p>{{personagem.nome}}</p>
+            </div>
+        </div>
+        <div class="coluna-12 coluna-lg-6 coluna-xxl-8 ">
+            <div class="linha">
+                <div class="coluna-8 coluna-sm-9 coluna-lg-8 coluna-xl-9 titulo">                
+                    <h2>Quadrinhos</h2>
+                </div>
+                <div class="coluna-4 coluna-sm-3 coluna-lg-4 coluna-xl-3">
+                    <div class="box-input-grupo">                        
+                        <select class="box-select" (change)="buscaPorPagina(paginaItem)" [(ngModel)]="paginaItem">
+                            <option *ngFor="let item of paginacao; let i = index" [value]="i">Página {{i+1}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>  
+
+            <div class="linha mt-2">            
+                <div class="coluna-12 coluna-sm-6 coluna-md-6 coluna-lg-6 coluna-xxl-6 px-0 py-4 px-md-1 box-quadrinhos" *ngFor="let item of quadrinhos;">                    
+                    <div class="linha my-2">
+                        <div class="coluna-6 coluna-sm-12 coluna-md-5 coluna-lg-12 coluna-xxl-6 box-quadrinhos-img">
+                            <img width="100%" src="{{item.thumbnail.path}}.{{item.thumbnail.extension}}" alt="{{item.title}}" />
+                        </div>
+                        <div class="coluna-6 coluna-sm-12 coluna-md-7 coluna-lg-12 coluna-xxl-6 box-quadrinhos-desc mt-sm-4 mt-md-0 mt-lg-4 ">
+                            <p>{{item.title}}</p>
+                            <p>{{item.description}}</p>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

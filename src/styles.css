@@ -1,1 +1,283 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'assets/css/fontes.css';
+@import 'assets/css/padroes.css';
+
+.topo {
+    background: #3d2324;
+    text-align: center;
+    padding:10px 0 15px 0;    
+}
+.corpo {
+    background: #fbfbfb;
+    border-radius: 50px 50px 0 0;     
+    overflow: hidden;   
+    margin-top: -48px;
+    /*padding-top: 70px;*/
+    border-top: 3px solid #eb3e43;
+}
+
+.titulo h2{
+    font-family: 'Roboto-Bold';
+    color: #ba3f41;
+    margin:0;
+    font-size: 1.5rem;
+}
+.titulo p{
+    margin:0;
+    font-family: 'Roboto-Regular';
+    font-size: 1rem;
+    color: #686868;
+}
+.titulo-2 {
+    background: #3d2324;
+    color: #FFFFFF;
+    padding: 10px 15px;
+    font-family: 'Roboto-Regular';
+    font-size: 16px;        
+    border-radius: 0px 15px 0px 15px;    
+}
+.titulo-3 {
+    border-bottom: 2px solid #3d2324;
+    border-radius: 0 0 0 20px;
+}
+.titulo-3 p{
+    background: #3d2324;
+    color: #FFFFFF;
+    padding: 10px 15px;
+    margin:0;
+    font-family: 'Roboto-Regular';
+    font-size: 16px;        
+    border-radius: 0px 15px 0px 15px;    
+    display: inline-flex;
+}
+.box-barra {
+    /*background: #ededed;*/
+    /*border: 1px solid #d8d8d8;*/
+    font-family: 'Roboto-Regular';
+    border-radius: 25px;
+    padding: 15px 10px 15px 10px;
+}
+.box-barra p {
+    margin:0;
+}
+.box-barra p:first-of-type {
+    font-size: 1.5rem;
+    font-family: 'Roboto-Bold';
+    color: #4f4f4f;
+}
+.box-barra p:last-of-type{
+    font-size: 0.9rem;
+    color: #868585;
+}
+.box-img {
+    overflow: hidden;
+    border-radius: 25px 0 25px 0;
+    height: 450px;
+    cursor: pointer;
+    border-bottom: 2px solid #3d2324;
+    border-left: 2px solid #3d2324;    
+}
+.box-img img {
+    height: 100%;    
+    width: 100%;
+    transition: all 0.300s;
+}
+.box-img:hover img {
+    margin-left: 0px;
+    height: 120%;    
+    width: 120%;    
+    transition: all 0.300s;
+}
+.legenda {
+    position: relative;    
+    background: #3d2324;
+    color: #FFFFFF;
+    padding: 10px 15px;
+    font-family: 'Roboto-Regular';
+    font-size: 16px;
+    /*top: -29px;*/
+    top: -10px;
+    border-radius: 0px 15px 0px 15px;
+}
+
+.box-input-grupo {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 100%;    
+}
+.box-input-grupo > .box-input,
+.box-input-grupo > .box-select {
+    position: relative;
+    flex: 1 1 auto;
+    width: 1%;
+    min-width: 0;
+}
+.box-input {
+    /*background-image: url('../src/assets/img/search_black_24dp.svg');
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 10px;    */
+    background-color: #fbfbfb;    
+    border-radius: 25px;
+    border:1px solid #dcdbdb;
+    font-size: 0.9rem;
+    color: #737373;    
+    display: block;
+    width: 100%;   
+    padding: 0.9rem 0.9rem 0.9rem 2.5rem;
+    box-shadow: 0px 0px 6px #c3c3c3;
+    outline: 0;
+}
+
+.box-select {
+    background-color: #fbfbfb;    
+    border-radius: 25px;
+    border:1px solid #dcdbdb;
+    font-size: 0.9rem;
+    color: #737373;    
+    display: block;
+    width: 100%;   
+    padding: 0.5rem 0.5rem 0.5rem 0.9rem;
+    box-shadow: 0px 0px 6px #c3c3c3;
+    outline: 0;
+}
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: url('../src/assets/img/arrow_drop_down_black_24dp.svg') no-repeat center right #FFF;    
+}
+select:focus, input:focus{
+    border: 1px solid #eb2025;    
+}
+.box-input-grupo.buscar .box-input {
+    background-color: #fbfbfb;    
+    border-radius: 25px 0 0 25px;
+    border:1px solid #dcdbdb;
+    font-size: 0.9rem;
+    color: #737373;    
+    display: block;    
+    padding: 0.9rem 0.9rem 0.9rem 2.5rem;
+    box-shadow: 0px 0px 6px #c3c3c3;
+    outline: 0;
+}
+.box-input-grupo.buscar button.btn {
+    background-color: #ededed;
+    border-radius: 0 25px 25px 0;            
+    margin-left: -1px      
+}
+button.btn {
+    background-color: #fbfbfb;
+    border-radius: 0 25px 25px 0;
+    border:1px solid #dcdbdb;
+    font-size: 0.9rem;
+    color: #737373;    
+    display: table-cell;    
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    box-shadow: 0px 0px 6px #c3c3c3;        
+    cursor: pointer;      
+    
+}
+
+.linha-fluido {
+    transition: all .4s ease 0s;
+    /*height: 100%  ;*/
+    overflow: auto;
+    overflow-y: hidden;
+}
+.linha-fluido::-webkit-scrollbar-track {
+    background-color: #ededed;
+    /*margin-right:5px;*/
+}
+.linha-fluido::-webkit-scrollbar {
+    width: 15px;
+    height: 15px;
+    background: #ededed;
+    /*margin-right:5px*/
+}
+.linha-fluido::-webkit-scrollbar-thumb {
+    background: #e81c21;
+    cursor: pointer;
+}
+.linha-fluido::-webkit-scrollbar-thumb:hover {
+    background: #3d2324;
+}
+.box-detalhes-img img{
+    border-radius: 0px 40px 0px 40px;
+    border-bottom: 3px solid #3d2324; 
+    width: 100%;
+}
+.box-quadrinhos {
+    border-bottom: 1px dotted #c1c1c1;
+}
+.box-quadrinhos-desc p:first-of-type {
+    font-family: 'Roboto-Bold';
+    font-size: 1rem;
+    margin:0;
+    padding-bottom: 10px;
+    color: #ba3f41;
+}
+
+.box-quadrinhos-desc p:last-of-type {
+    margin:0;
+    font-size: 0.9rem;
+    font-family: 'Roboto-Regular';
+    line-height: 18px;    
+    color: #868585;
+}
+.box-quadrinhos-img img{
+    border-radius: 20px;
+}
+
+a.btn {
+    background-color: #fbfbfb;    
+    border-radius: 25px;
+    border:1px solid #dcdbdb;
+    font-size: 0.9rem;
+    color: #737373;    
+    display: table-cell;
+    width: 30px;   
+    height: 30px;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    box-shadow: 0px 0px 6px #c3c3c3;        
+    cursor: pointer; 
+    transition:  all 0.362s;   
+}
+.btn:hover {
+    background-color: #ededed;
+    transition:  all 0.362s;
+}
+a.btn.carregarMais{
+    /*display: flow-root;*/
+    display: inline-block !important;
+    margin-top: 5px;
+}
+a.btn.carregarMais img {    
+    padding-top: 2px;
+}
+
+a.btn-flutuante {
+    cursor: pointer;    
+    background-color: #fbfbfb;    
+    border-radius: 25px;
+    border:1px solid #dcdbdb;
+    font-size: 0.9rem;
+    color: #737373;    
+    display: table-cell;
+    width: 30px;   
+    height: 30px;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    box-shadow: 0px 0px 6px #c3c3c3;        
+    position: fixed;
+    top: 15px;    
+}
+a.btn-flutuante img{
+    padding-top: 0.12rem;
+    padding-left: 0.12rem;
+}
+.msg-espera {
+    font-family: 'Roboto-Bold';
+    font-size: 1.2rem;
+    text-align: center;
+}

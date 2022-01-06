@@ -1,0 +1,47 @@
+<div class="controle">
+    <div class="linha mt-5">
+        <div class="coluna-12 titulo txt-center">
+            <h2>Bem-vindo ao catálogo Marvel</h2>
+            <p>Encontre aqui o seu personagem</p>                                
+        </div>
+    </div>
+    <div class="linha mt-4 mt-sm-5">
+        <div class="coluna-12 box-barra">
+            <div class="linha">
+                <div class="coluna-12 coluna-sm-5 coluna-md-4 coluna-xxl-6 order-1 order-sm-0 mt-5 mt-sm-0"> <!--d-none d-sm-block-->
+                    <p>Personagens</p>
+                    <p>{{totalPersonagens}} encontrados</p>
+                </div>
+                <div class="coluna-12 coluna-sm-7 coluna-md-8 coluna-xxl-6 order-0 order-sm-1">                    
+                    <div class="box-input-grupo buscar">
+                        <input type="text" class="box-input " [(ngModel)]="campoPersonagem" placeholder="Pesquisar">
+                        <button class="btn" (click)="verificaConsulta(campoPersonagem)">
+                            <img src="../../assets/img/search_black_24dp.svg" alt="Pesquisar" />
+                        </button>
+                    </div>                    
+                </div>
+            </div>
+        </div>            
+    </div>
+    <div class="linha mt-3 mt-sm-5" *ngIf="msgAguarde">
+        <div class="coluna-12">
+            <p class="msg-espera">Aguarde...</p>
+        </div>        
+    </div>
+    <div class="linha-fluido mt-3 mt-sm-5" *ngIf="!msgAguarde">
+        <div class="coluna-12 coluna-sm-6 coluna-lg-4 coluna-xl-3 mb-5" *ngFor="let item of personagens;">                
+            <div class="box-img" (click)="verDetalhesPersonagem(item.id)">
+                <img src="{{item.thumbnail.path}}.{{item.thumbnail.extension}}" alt="{{item.name}}" />
+            </div>
+            <span class="legenda">{{item.name}}</span>
+        </div>
+        <div class="coluna-3 coluna-sm-2 coluna-lg-1 txt-center" *ngIf="personagens.length > 0">            
+            <a class="btn carregarMais" (click)="carregarMaisPersonagens(paginaItem, campoPersonagem)">
+                <img  src="../../assets/img/add_black_24dp.svg" alt="Carregar mais personagens" />
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
